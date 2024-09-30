@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "ControllerDemo.Services.LogTransportService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

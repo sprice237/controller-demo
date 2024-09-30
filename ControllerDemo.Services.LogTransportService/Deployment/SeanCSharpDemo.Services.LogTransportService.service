@@ -1,0 +1,13 @@
+[Unit]
+Description=Log transport service
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/opt/demo/ControllerDemo.Services.LogTransportService
+ExecStart=/opt/demo/ControllerDemo.Services.LogTransportService/ControllerDemo.Services.LogTransportService
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target 

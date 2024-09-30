@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ControllerDemo.Rabbit.DependencyInjection\ControllerDemo.Rabbit.DependencyInjection.csproj" />
+      <ProjectReference Include="..\ControllerDemo.Rabbit\ControllerDemo.Rabbit.csproj" />
+      <ProjectReference Include="..\ControllerDemo.Services.Common\ControllerDemo.Services.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="SocketIOClient" Version="2.0.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="Deployment\ControllerDemo.Services.LogTransportService.service">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </None>
+        <None Update="Deployment\post-install.sh">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </None>
+        <None Update="Deployment\pre-install.sh">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Properties\launchSettings.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      </Content>
+      <Content Update="appsettings.Development.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\ControllerDemo.Services.LogTransportService.deps.json" />
+      <_ContentIncludedByDefault Remove="publish\ControllerDemo.Services.LogTransportService.runtimeconfig.json" />
+    </ItemGroup>
+
+</Project>
